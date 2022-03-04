@@ -4,42 +4,55 @@ import { Box, styled } from '@mui/system';
 import { Medication } from '@mui/icons-material';
 import { drugs } from '../../utils/drugsUtils';
 
-interface Props {
+export type Drug = {
   drugNameIndex: number;
   amount: number;
   unit: 'mg' | 'gram';
   hasPrescription: boolean;
+};
+
+interface DrugCardProps {
+  drug: Drug;
 }
 
-const DrugCard: React.FC<Props> = ({ drugNameIndex, amount, unit, hasPrescription }) => {
+const DrugCard: React.FC<DrugCardProps> = ({ drug }) => {
+  const { drugNameIndex, amount, unit, hasPrescription } = drug;
   const drugName = drugs[drugNameIndex];
   const title = `${drugName} ${amount} ${unit}`;
   return (
-    <Card sx={{ maxWidth: 200, direction: 'rtl' }}>
+    <Card
+      sx={{
+        minHeight: 170,
+        maxWidth: 190,
+        direction: 'rtl',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}
+    >
       <CardContent>
-        <Box sx={{display:'flex', flexDirection:'column', alignItems:'start'}}>
-          <Box lineHeight={0}>
-            <Medication />
-          </Box>
-          <Typography gutterBottom variant={'h5'}>
-            {title}
-          </Typography>
+        <Box>
+          <Medication />
         </Box>
+        <Typography gutterBottom variant={'h5'}>
+          {title}
+        </Typography>
         <Typography variant="body2" color="text.secondary">
           {hasPrescription ? 'איזה כיף! יש לך מרשם לזה!' : 'אין מרשם בתוקף לתרופה זו'}
         </Typography>
       </CardContent>
       {!hasPrescription && (
-        <CardActions
+        <Box
           sx={{
             display: 'flex',
             justifyContent: 'flex-end',
+            margin: '15px',
           }}
         >
           <Button color="primary" onClick={() => alert('בקשת נשלחה!')}>
             <Typography sx={{ fontWeight: 'bold' }}>{'לחידוש מרשם!'}</Typography>
           </Button>
-        </CardActions>
+        </Box>
       )}
     </Card>
   );

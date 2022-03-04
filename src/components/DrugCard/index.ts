@@ -1,1 +1,1 @@
-export { default } from './DrugCard';
+export { default, Drug} from './DrugCard';

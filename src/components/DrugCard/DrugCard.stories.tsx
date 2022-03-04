@@ -1,6 +1,7 @@
 import React from 'react';
-import DrugCard from '.';
+import DrugCard, { Drug } from '.';
 import { withKnobs, select, number, boolean } from '@storybook/addon-knobs';
+import { Grid, Stack } from '@mui/material';
 export default {
   title: 'Components/Card',
   component: DrugCard,
@@ -12,6 +13,14 @@ export const Playground = () => {
   const amount = number('Drug Amount', 10);
   const unit = select('Drug Unit', ['mg', 'gram'], 'mg');
   const hasPrescription = boolean('hasPrescription', true);
+  const drug = {
+    drugNameIndex,
+    amount,
+    unit,
+    hasPrescription,
+  };
+  return <DrugCard drug={drug}></DrugCard>;
+};
   return (
     <DrugCard
       drugNameIndex={drugNameIndex}

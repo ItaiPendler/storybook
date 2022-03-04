@@ -1,1 +1,1 @@
-export { default } from './components/StyledCard';
+export { default } from './components/DrugCard';

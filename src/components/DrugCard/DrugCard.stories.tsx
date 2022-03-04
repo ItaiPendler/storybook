@@ -1,5 +1,5 @@
 import React from 'react';
-import DrugCard from '../DrugCard';
+import DrugCard from '.';
 import { withKnobs, select, number, boolean } from '@storybook/addon-knobs';
 export default {
   title: 'Components/Card',

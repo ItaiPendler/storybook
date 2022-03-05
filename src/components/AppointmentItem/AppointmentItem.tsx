@@ -22,6 +22,7 @@ const AppointmentItem: React.FC<Props> = ({ appointment }) => {
     <Grid container flexDirection="column" dir="rtl">
       <Grid item>
         <Typography
+          variant="body2"
           sx={{ textAlign: 'end', marginLeft: '10px', marginTop: '10px', marginBotton: 0 }}
         >
           {moment(date).format('יום dddd, DD MMMM YYYY | HH:mm')}
@@ -38,7 +39,7 @@ const AppointmentItem: React.FC<Props> = ({ appointment }) => {
       </Stack>
       <Grid container item flexDirection="row" justifyContent="space-between" alignItems="baseline">
         <Grid item xs={6}>
-          <Typography>{additionalInfo}</Typography>
+          <Typography variant="body2">{additionalInfo}</Typography>
         </Grid>
         {address && (
           <Grid item xs={6}>

@@ -1,7 +1,8 @@
 import React from 'react';
 import DrugCard, { Drug } from '.';
 import { withKnobs, select, number, boolean } from '@storybook/addon-knobs';
-import { Grid, Stack } from '@mui/material';
+import { Grid } from '@mui/material';
+
 export default {
   title: 'Components/Card',
   component: DrugCard,

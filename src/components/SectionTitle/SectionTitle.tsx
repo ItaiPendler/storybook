@@ -1,3 +1,4 @@
+import { ChevronLeft } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import React, { ReactNode } from 'react';
 
@@ -15,6 +16,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ children, icon }) => {
       <Typography mr={2} sx={{ fontSize: 20, fontWeight: 'bold', color: '#3e4872' }} variant="h3">
         {children}
       </Typography>
+      <Box lineHeight={0}>
+        <ChevronLeft/>
+      </Box>
     </Box>
   );
 };

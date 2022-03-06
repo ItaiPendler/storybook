@@ -13,7 +13,7 @@ const QuickViewSection = ({ icon, title, children }: Props) => {
     <Stack direction="column" spacing={1} alignItems="flex-start" sx={{ direction: 'rtl' }}>
       <SectionTitle icon={icon}>{title}</SectionTitle>
       <Card>
-        <Stack direction="column" divider={<Divider orientation="horizontal" />}>
+        <Stack direction="column" divider={<Divider orientation="horizontal" variant="middle" />}>
           {children}
         </Stack>
       </Card>

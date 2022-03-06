@@ -1,4 +1,4 @@
-import { Button, Divider, Grid, Stack, Typography } from '@mui/material';
+import { Button, CardActions, Divider, Grid, Stack, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import moment from 'moment';
 import React from 'react';
@@ -20,16 +20,21 @@ const AppointmentItem: React.FC<Props> = ({ appointment }) => {
   const additionalInfo = `${serviceName}, ${clinicName}`;
   return (
     <Grid container flexDirection="column" dir="rtl">
-      <Grid item>
-        <Typography
-          variant="body2"
-          sx={{ textAlign: 'end', marginLeft: '10px', marginTop: '10px', marginBotton: 0 }}
-        >
-          {moment(date).format('יום dddd, DD MMMM YYYY | HH:mm')}
-        </Typography>
-      </Grid>
       <Stack
         direction="row"
+        divider={
+          <Divider orientation="vertical" flexItem sx={{ margin: '5px', borderColor: 'black' }} />
+        }
+        marginLeft="10px"
+        marginTop="10px"
+        alignSelf="end"
+      >
+        <Typography variant="body2">{moment(date).format('יום dddd, DD MMMM YY')}</Typography>
+        <Typography variant="body2">{moment(date).format('HH:mm')}</Typography>
+      </Stack>
+      <Stack
+        direction="row"
+        marginRight="10px"
         divider={
           <Divider orientation="vertical" flexItem sx={{ margin: '5px', borderColor: 'black' }} />
         }
@@ -37,18 +42,17 @@ const AppointmentItem: React.FC<Props> = ({ appointment }) => {
         <Typography>{serviceTypeName}</Typography>
         <Typography>{facilityName}</Typography>
       </Stack>
-      <Grid container item flexDirection="row" justifyContent="space-between" alignItems="baseline">
-        <Grid item xs={6}>
-          <Typography variant="body2">{additionalInfo}</Typography>
-        </Grid>
+
+      <CardActions>
+        <Typography variant="body2" marginLeft="100px">
+          {additionalInfo}
+        </Typography>
         {address && (
-          <Grid item xs={6}>
-            <Button color="primary" onClick={() => alert('אין לי מושג!')}>
-              <Typography sx={{ fontWeight: 'bold' }}>{'איך מגיעים?'}</Typography>
-            </Button>
-          </Grid>
+          <Button color="primary" onClick={() => alert('אין לי מושג!')}>
+            <Typography sx={{ fontWeight: 'bold' }}>{'איך מגיעים?'}</Typography>
+          </Button>
         )}
-      </Grid>
+      </CardActions>
     </Grid>
   );
 };

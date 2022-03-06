@@ -4,6 +4,7 @@ import moment from 'moment';
 import React from 'react';
 import QuickViewSection from '.';
 import AppointmentItem, { AppointmentItemType } from '../AppointmentItem';
+import { CalendarToday } from '@mui/icons-material';
 
 moment.locale('he');
 export default {
@@ -41,7 +42,7 @@ export const AppointmentsPlayground = () => {
   ];
   const title = text('Section Title', 'התורים שלי');
   return (
-    <QuickViewSection title={title}>
+    <QuickViewSection title={title} icon={<CalendarToday />}>
       {appointments.map(appointment => (
         <AppointmentItem appointment={appointment} />
       ))}

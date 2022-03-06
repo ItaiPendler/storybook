@@ -1,15 +1,17 @@
 import { Card, Divider, Stack, Typography } from '@mui/material';
-import React from 'react';
+import React, { ReactNode } from 'react';
+import SectionTitle from '../SectionTitle/SectionTitle';
 
 interface Props {
   title: string;
+  icon: ReactNode;
   children: any;
 }
 
-const QuickViewSection = ({ title, children }: Props) => {
+const QuickViewSection = ({ icon, title, children }: Props) => {
   return (
-    <Stack direction="column" spacing={1} alignItems="flex-end">
-      <Typography>{title}</Typography>
+    <Stack direction="column" spacing={1} alignItems="flex-start" sx={{ direction: 'rtl' }}>
+      <SectionTitle icon={icon}>{title}</SectionTitle>
       <Card>
         <Stack direction="column" divider={<Divider orientation="horizontal" />}>
           {children}

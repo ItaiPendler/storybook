@@ -34,44 +34,25 @@ const DetailViewSection: React.FC<DetailViewSectionProps> = ({
             border: '1px solid rgb(0 0 0 / 12%)',
           }}
         >
-          <Stack spacing={1} width={345} height={220} margin="10px" justifyContent="space-evenly">
-            <Skeleton variant="rectangular" height={24} width={210} />
-
-            <Skeleton variant="rectangular" height={40} width={315} />
-            <Skeleton variant="rectangular" height={18} width={100} />
-          </Stack>
+          <Skeleton variant="rectangular" width={345} height={220} animation="wave" />
         </Card>
         <Card
           sx={{
             maxWidth: 345,
             direction: 'rtl',
             border: '1px solid rgb(0 0 0 / 12%)',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
         >
-          <Stack spacing={1} width={345} height={220}>
-            <Skeleton variant="rectangular" height={24} width={210} />
-
-            <Skeleton variant="rectangular" height={40} width={315} />
-            <Skeleton variant="rectangular" height={18} width={100} />
-          </Stack>
+          <Skeleton variant="rectangular" width={345} height={220} animation="wave" />
         </Card>
         <Card
           sx={{
             maxWidth: 345,
             direction: 'rtl',
             border: '1px solid rgb(0 0 0 / 12%)',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
         >
-          <Stack spacing={1} width={345} height={220}>
-            <Skeleton variant="rectangular" height={24} width={210} />
-
-            <Skeleton variant="rectangular" height={40} width={315} />
-            <Skeleton variant="rectangular" height={18} width={100} />
-          </Stack>
+          <Skeleton variant="rectangular" width={345} height={220} animation="wave" />
         </Card>
       </Stack>
     );
@@ -83,7 +64,7 @@ const DetailViewSection: React.FC<DetailViewSectionProps> = ({
         onClick={() => {
           if (expandedIndex.includes(index)) {
             setExpandedIndex(expandedIndex.filter(indexes => indexes !== index));
-          } else if(data[index].extraContent) {
+          } else if (data[index].extraContent) {
             setExpandedIndex([...expandedIndex, index]);
           }
           list.current?.recomputeRowHeights();

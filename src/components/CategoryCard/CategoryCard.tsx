@@ -1,10 +1,12 @@
-import { Card, CardActionArea, Stack, SvgIcon, Typography } from '@mui/material';
+import { Card, CardActionArea, Stack, StepContent, SvgIcon, Typography } from '@mui/material';
 import React from 'react';
+
 
 interface Props {
   title: string;
   iconPath: string;
 }
+
 const CategoryCard = ({ title, iconPath }: Props) => {
   return (
     <Card

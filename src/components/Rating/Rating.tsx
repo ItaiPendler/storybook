@@ -26,22 +26,13 @@ const Rating: React.FC<Props> = ({ items, selectedIndex, onSelect }) => {
           style={
             selectedIndex === index
               ? {
-                  transform: 'scale(2.5)',
+                  transform: 'scale(1.5)',
+                  transition: 'all 0.3s ease-in'
                 }
               : undefined
           }
         >
-          <SvgIcon
-            style={
-              selectedIndex === index
-                ? {
-                    color: '#6c3cff',
-                  }
-                : {
-                    color: '#6c3cff',
-                  }
-            }
-          >
+          <SvgIcon style={{ color: '#6c3cff' }}>
             <path d={iconPath} />
           </SvgIcon>
           <Typography>{title}</Typography>

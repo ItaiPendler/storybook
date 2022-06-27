@@ -13,8 +13,8 @@ export default {
   decorators: [withKnobs],
 };
 
-export const AppointmentsPlayground = () => {
-  const [selectedIndex, setselectedIndex] = useState(number('selectedIndex', 0))
+export const IDKman = () => {
+  const [selectedIndex, setselectedIndex] = useState<number|undefined>()
 
   const items: Content[] = [
     { title: 'גרוע', iconPath: 'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z' },
@@ -34,7 +34,6 @@ export const AppointmentsPlayground = () => {
         'M7 12.917v.583a4.5 4.5 0 1 0 9 0v-1.67a3.001 3.001 0 1 1 2 0v1.67a6.5 6.5 0 1 1-13 0v-.583A6.002 6.002 0 0 1 0 7V2a2 2 0 0 1 2-2h1a1 1 0 1 1 0 2H2v5a4 4 0 1 0 8 0V2H9a1 1 0 1 1 0-2h1a2 2 0 0 1 2 2v5a6.002 6.002 0 0 1-5 5.917zM17 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z',
     },
   ];
-  // const selectedIndex = number('selectedIndex', 0);
 
   return <Rating items={items} selectedIndex={selectedIndex} onSelect={setselectedIndex}/>;
 };

@@ -16,7 +16,7 @@ const Rating: React.FC<Props> = ({ items, selectedIndex, onSelect }) => {
       spacing={1}
       alignItems="center"
       justifyContent="space-evenly"
-      sx={{ direction: 'rtl' }}
+      sx={{ direction: 'rtl', marginTop:50 }}
     >
       {items.map(({ title, iconPath }, index) => (
         <Stack
